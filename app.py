@@ -131,7 +131,7 @@ def text_to_speech(text):
 
 # Function to generate content using Generative AI
 def generate_content(input_text):
-    GOOGLE_API_KEY = "AIzaSyAeySqsJ7_cBnHhzeZqRU2HjOWV6QOsgnk"
+    GOOGLE_API_KEY = "api key here"
     genai.configure(api_key=GOOGLE_API_KEY)
     
     # Read the content from the text file
