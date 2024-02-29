@@ -125,13 +125,13 @@ def speech_to_text(selected_mic):
 def text_to_speech(text):
     engine = pyttsx3.init()
     # Set the voice to Microsoft Zira Desktop
-    engine.setProperty('voice', 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_EN-US_ZIRA_11.0')
+    engine.setProperty('voice', 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_EN-US_DAVID_11.0')
     engine.say(text)
     engine.runAndWait()
 
 # Function to generate content using Generative AI
 def generate_content(input_text):
-    GOOGLE_API_KEY = "api key here"
+    GOOGLE_API_KEY = "AIzaSyAeySqsJ7_cBnHhzeZqRU2HjOWV6QOsgnk"
     genai.configure(api_key=GOOGLE_API_KEY)
     
     # Read the content from the text file
@@ -139,7 +139,8 @@ def generate_content(input_text):
         additional_info = file.read()
     
     # Concatenate the input text with the content from the file
-    prompt = f"{input_text} tell the relevant information strictly like if the name is asked then only name and who made you then tell that like that dont exceed beyond 100words from this question from the provided information {additional_info}"
+    # prompt = f"{input_text} tell the relevant information strictly like if the name is asked then only name and who made you then tell that like that dont exceed beyond 100words from this question from the provided information {additional_info}"
+    prompt = f"{input_text}"
     
     # Generate content based on the updated prompt
     model = genai.GenerativeModel('gemini-pro')
